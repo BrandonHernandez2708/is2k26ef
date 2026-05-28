@@ -37,17 +37,18 @@
             this.catálogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.consultaBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignacionPermisoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignacionPermisoPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Pnl_Superior.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -91,7 +92,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 73);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1371, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1371, 28);
             this.menuStrip1.TabIndex = 101;
             this.menuStrip1.Text = "MenuStrip";
             // 
@@ -101,7 +102,7 @@
             this.cerrarSesiónToolStripMenuItem});
             this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.archivoToolStripMenuItem.Text = "Inicio";
             // 
             // cerrarSesiónToolStripMenuItem
@@ -114,16 +115,18 @@
             // 
             // catálogosToolStripMenuItem
             // 
+            this.catálogosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cursosToolStripMenuItem});
             this.catálogosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.catálogosToolStripMenuItem.Name = "catálogosToolStripMenuItem";
-            this.catálogosToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.catálogosToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.catálogosToolStripMenuItem.Text = "Catálogos";
             // 
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
-            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(94, 26);
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
             this.procesosToolStripMenuItem.Text = "Procesos";
             // 
             // herramientasToolStripMenuItem
@@ -132,14 +135,21 @@
             this.reporteadosToolStripMenuItem});
             this.herramientasToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.herramientasToolStripMenuItem.Text = "Reportes";
+            // 
+            // reporteadosToolStripMenuItem
+            // 
+            this.reporteadosToolStripMenuItem.Name = "reporteadosToolStripMenuItem";
+            this.reporteadosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reporteadosToolStripMenuItem.Text = "Reporteador";
+            this.reporteadosToolStripMenuItem.Click += new System.EventHandler(this.reporteadosToolStripMenuItem_Click);
             // 
             // asignacionesToolStripMenuItem
             // 
             this.asignacionesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.asignacionesToolStripMenuItem.Name = "asignacionesToolStripMenuItem";
-            this.asignacionesToolStripMenuItem.Size = new System.Drawing.Size(78, 26);
+            this.asignacionesToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.asignacionesToolStripMenuItem.Text = "Ayudas";
             // 
             // seguridadToolStripMenuItem
@@ -153,26 +163,8 @@
             this.asignacionPermisoPerfilToolStripMenuItem});
             this.seguridadToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 717);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(3, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1371, 26);
-            this.statusStrip.TabIndex = 102;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(54, 20);
-            this.toolStripStatusLabel.Text = "Estado";
             // 
             // consultaBitacoraToolStripMenuItem
             // 
@@ -216,12 +208,30 @@
             this.asignacionPermisoPerfilToolStripMenuItem.Text = "Asignacion Permiso Perfil";
             this.asignacionPermisoPerfilToolStripMenuItem.Click += new System.EventHandler(this.asignacionPermisoPerfilToolStripMenuItem_Click);
             // 
-            // reporteadosToolStripMenuItem
+            // statusStrip
             // 
-            this.reporteadosToolStripMenuItem.Name = "reporteadosToolStripMenuItem";
-            this.reporteadosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.reporteadosToolStripMenuItem.Text = "Reporteador";
-            this.reporteadosToolStripMenuItem.Click += new System.EventHandler(this.reporteadosToolStripMenuItem_Click);
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 717);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(3, 0, 19, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1371, 26);
+            this.statusStrip.TabIndex = 102;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(54, 20);
+            this.toolStripStatusLabel.Text = "Estado";
+            // 
+            // cursosToolStripMenuItem
+            // 
+            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cursosToolStripMenuItem.Text = "Cursos ";
+            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // Frm_MDI
             // 
@@ -275,5 +285,6 @@
         private System.Windows.Forms.ToolStripMenuItem asignacionPermisoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignacionPermisoPerfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
     }
 }
