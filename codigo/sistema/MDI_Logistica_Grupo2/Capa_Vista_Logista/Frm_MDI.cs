@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Capa_Vista_Seguridad;
 using Capa_Controlador_Seguridad;
 using System.Drawing.Imaging;
+using Capa_Vista_Cursos;
 
 
 namespace Capa_Vista_Logista
@@ -90,7 +91,7 @@ namespace Capa_Vista_Logista
             // CATÁLOGOS: 700-709
             Dictionary<int, ToolStripMenuItem> mapaCatalogos = new Dictionary<int, ToolStripMenuItem>
             {
-                //{708, cuentasPorPagarToolStripMenuItem}
+                {735,cursosToolStripMenuItem}
 
             };
 
@@ -114,7 +115,7 @@ namespace Capa_Vista_Logista
                 int idModulo = Convert.ToInt32(row["iFk_id_modulo"]);
                 int idAplicacion = Convert.ToInt32(row["iFk_id_aplicacion"]);
 
-                if (idModulo == 44 && idAplicacion >= 700 && idAplicacion <= 734)
+                if (idModulo == 44 && idAplicacion >= 700 && idAplicacion <= 735)
                 {
                     if (mapaCatalogos.ContainsKey(idAplicacion))
                         mapaCatalogos[idAplicacion].Enabled = true;
@@ -135,7 +136,7 @@ namespace Capa_Vista_Logista
                 int idModulo = Convert.ToInt32(row["iFk_id_modulo"]);
                 int idAplicacion = Convert.ToInt32(row["iFk_id_aplicacion"]);
 
-                if (idModulo == 44 && idAplicacion >= 700 && idAplicacion <= 734)
+                if (idModulo == 44 && idAplicacion >= 700 && idAplicacion <= 735)
                 {
                     if (mapaCatalogos.ContainsKey(idAplicacion))
                         mapaCatalogos[idAplicacion].Enabled = true;
@@ -191,7 +192,7 @@ namespace Capa_Vista_Logista
 
         private void mantenimientoAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Capa_Vista_Seguridad.FrmAplicacion app = new FrmAplicacion();
             app.MdiParent = this;
             app.Show();
@@ -202,7 +203,7 @@ namespace Capa_Vista_Logista
 
         private void asignacionPermisoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+   
             Frm_asignacion_aplicacion_usuario permisoapp = new Frm_asignacion_aplicacion_usuario();
             permisoapp.MdiParent = this;
             permisoapp.Show();
@@ -211,7 +212,7 @@ namespace Capa_Vista_Logista
 
         private void asignacionPermisoPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+        
             Frm_asignacion_perfil_usuario permisoperfil = new Frm_asignacion_perfil_usuario();
             permisoperfil.MdiParent = this;
             permisoperfil.Show();
@@ -225,6 +226,12 @@ namespace Capa_Vista_Logista
             
         }
 
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Cursos cursos = new Frm_Cursos();
+            cursos.MdiParent = this;
+            cursos.Show();
 
+        }
     }
 }

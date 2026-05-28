@@ -40,7 +40,7 @@ namespace Capa_Vista_Cursos
                 "Nombre",
                 "Estado"
             };
-            int id_aplicacion = 701;
+            int id_aplicacion = 735;
             int id_Modulo = 44;
             navegador1.IPkId_Aplicacion = id_aplicacion;
             navegador1.IPkId_Modulo = id_Modulo;
