@@ -91,25 +91,21 @@ namespace Capa_Vista_Logista
             Dictionary<int, ToolStripMenuItem> mapaCatalogos = new Dictionary<int, ToolStripMenuItem>
             {
                 //{708, cuentasPorPagarToolStripMenuItem}
-                
+
             };
 
             // PROCESOS: 710-734 (agregar cuando estén listos)
             Dictionary<int, ToolStripMenuItem> mapaProcesos = new Dictionary<int, ToolStripMenuItem>
             {
-                
+
                 //{730, consultaDeInventariosToolStripMenuItem_Click},
             };
-            Dictionary<int, ToolStripMenuItem> mapaReportes = new Dictionary<int, ToolStripMenuItem>
-            {
-                //{733, balanceDeAntiguedadToolStripMenuItem },
-
-            };
+         
 
 
             foreach (var sub in mapaCatalogos.Values) sub.Enabled = false;
             foreach (var sub in mapaProcesos.Values) sub.Enabled = false;
-            foreach (var sub in mapaReportes.Values) sub.Enabled = false;
+       
             menuItems[MenuOpciones.Seguridad].Enabled = false;
 
             DataTable dtPermisosPerfil = controladorPermisosPerfil.datObtenerPermisosPorPerfil(iIdPerfil);
@@ -124,11 +120,10 @@ namespace Capa_Vista_Logista
                         mapaCatalogos[idAplicacion].Enabled = true;
                     if (mapaProcesos.ContainsKey(idAplicacion))
                         mapaProcesos[idAplicacion].Enabled = true;
-                    if (mapaReportes.ContainsKey(idAplicacion))
-                        mapaReportes[idAplicacion].Enabled = true;
+            
                 }
 
-                if (idModulo == 4 && idAplicacion == 309)
+                if (idModulo == 4 && idAplicacion >= 301 && idAplicacion <= 310)
                 {
                     menuItems[MenuOpciones.Seguridad].Enabled = true;
                 }
@@ -146,8 +141,7 @@ namespace Capa_Vista_Logista
                         mapaCatalogos[idAplicacion].Enabled = true;
                     if (mapaProcesos.ContainsKey(idAplicacion))
                         mapaProcesos[idAplicacion].Enabled = true;
-                    if (mapaReportes.ContainsKey(idAplicacion))
-                        mapaReportes[idAplicacion].Enabled = true;
+               
                 }
 
                 if (idModulo == 4 && idAplicacion == 309)
@@ -158,7 +152,7 @@ namespace Capa_Vista_Logista
 
             menuItems[MenuOpciones.Catalogos].Enabled = mapaCatalogos.Values.Any(m => m.Enabled);
             menuItems[MenuOpciones.Procesos].Enabled = mapaProcesos.Values.Any(m => m.Enabled);
-            menuItems[MenuOpciones.Reportes].Enabled = mapaProcesos.Values.Any(m => m.Enabled);
+        
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,7 +160,71 @@ namespace Capa_Vista_Logista
             this.Hide();
             Frm_LOGIN login = new Frm_LOGIN();
             login.ShowDialog();
-            this.Close();
+        
         }
+
+        private void consultaBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            Frm_Bitacora bitacora = new Frm_Bitacora();
+            bitacora.ShowDialog();
+    
+        }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+            Frm_cambiar_contrasena ventana = new Frm_cambiar_contrasena(Capa_Controlador_Seguridad.Cls_Usuario_Conectado.iIdUsuario);
+            ventana.MdiParent = this;
+            ventana.Show();
+   
+        }
+
+        private void crearUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            Frm_Usuario usuario = new Frm_Usuario();
+            usuario.MdiParent = this;
+            usuario.Show();
+
+        }
+
+        private void mantenimientoAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Capa_Vista_Seguridad.FrmAplicacion app = new FrmAplicacion();
+            app.MdiParent = this;
+            app.Show();
+
+
+
+        }
+
+        private void asignacionPermisoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_asignacion_aplicacion_usuario permisoapp = new Frm_asignacion_aplicacion_usuario();
+            permisoapp.MdiParent = this;
+            permisoapp.Show();
+
+        }
+
+        private void asignacionPermisoPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_asignacion_perfil_usuario permisoperfil = new Frm_asignacion_perfil_usuario();
+            permisoperfil.MdiParent = this;
+            permisoperfil.Show();
+        }
+
+        private void reporteadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+            Capa_Vista_Reporteador.Frm_Reportes reporteador = new Capa_Vista_Reporteador.Frm_Reportes();
+            reporteador.Show();
+            
+        }
+
+
     }
 }
